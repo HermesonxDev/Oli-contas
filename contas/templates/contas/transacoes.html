@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="'viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+        <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+        <link rel="stylesheet" href="{% static 'css/transacoes.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <title>Oli Contas - Modere suas finanças</title>
+    </head>
+
+    <body>
+        <!-- Menu de navegação-->
+        <header>
+            <nav id="menu-h">
+                <ul>
+                    <li><a href="{% url 'home' %}"><span class="bi bi-house-door-fill" aria-hidden="true"></span> Inicio</a></li>
+                    <li><a href="{% url 'nova_transacao' %}"><span class="bi bi-cash-coin" aria-hidden="True"></span> Novas transações</a></li>
+                    <li><a href="{% url 'transacoes' %}"><span class="bi bi-bank2" aria-hidden="True"></span> Transações</a></li>
+                    <li><a href="{% url 'desenvolvedor' %}"><span class="bi bi-braces"></span> Desenvolvedor</a></li>
+                    <li><a href="{% url 'suporte' %}"><span class="bi bi-person-workspace" aria-hidden="True"></span> Suporte</a></li>
+                    <li><a href="{% url 'sair' %}"><span class="bi bi-door-open" aria-hidden="True"></span> Sair</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Tabela de transações-->
+        <main>
+            <div class="container theme-showcase" role="main">
+                <div class="page-header">
+                    <h1 class="titulo">Transações</h1>
+                </div>
+                    
+                <div class="row">
+                    <div class="col-md-12">    
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="titulo-tabela">Banco</th>
+                                    <th class="titulo-tabela">Tipo</th>
+                                    <th class="titulo-tabela">Data</th>
+                                    <th class="titulo-tabela">Descrição</th>
+                                    <th class="titulo-tabela">Valor</th>
+                                    <th class="titulo-tabela">Categoria</th>
+                                </tr>
+                            </thead>
+                                    
+                            <tbody>
+                                {% for transacao in transacoes %}
+                                <tr>
+                                        <td>{{ transacao.banco }}</td>
+                                        <td>{{ transacao.tipo }}</td>
+                                        <td>{{ transacao.data }}</td>
+                                        <td>{{ transacao.descricao }}</td>
+                                        <td>R$ {{ transacao.valor }}</td>
+                                        <td>{{ transacao.categoria }}</td>
+                                        <td><a href="{% url 'update' transacao.id %}"><button>Editar</button></a></td>
+                                        <td><a href="{% url 'delete' transacao.id %}"><button>Excluir</button></a></td>
+                                </tr>
+                                {% endfor %}
+                                <tr>
+                                    <a href="{% url 'nova_transacao' %}"><button type="button" class="btn btn-sm btn-warning">Nova Transação</button></a>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

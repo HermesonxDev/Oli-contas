@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="'viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <title>Oli Contas - Modere suas finanças</title>
+    </head>
+
+    <body>
+        <header>
+            <nav id="menu-h">
+                <ul>
+                    <li><a href="#"><span class="bi bi-info-circle"></span> Informações Gerais</a></li>
+                    <li><a href="#"><span class="bi bi-chat-dots-fill"></span> Comunidade</a></li>
+                    <li><a href="{% url 'login' %}"><span class="bi bi-door-open-fill" aria-hidden="True"></span> Entrar </a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main">
+            <section class="main-content">
+                <div class="main-content-script">
+                    <h1 class="main-content-title">Oli Contas</h1>
+                    <h2 class="main-content-subtitle">Deixe suas finanças mais fáceis</h2>
+                    <a href="{% url 'cadastro' %}"><button class="main-content-button">Iniciar transações</button></a>
+                </div>
+                <img class="main-content-image" src="{% static 'img/Logo256px.png' %}" alt="Logo Oli Contas">
+            </section>
+
+            <section class="secondary-content">
+                <h3 class="secondary-content-title">O que você pode fazer na nossa plataforma?</h3>
+                <p class="secondary-content-paragraph">1. <strong>Gerenciar</strong> suas transações.</p>
+                <p class="secondary-content-paragraph">2. <strong>Economizar tempo</strong> na contabilidade.</p>
+                <p class="secondary-content-paragraph">3. Entender melhor para onde seu <strong>dinheiro</strong> está indo.</p>
+            </section>
+        </main>
+    </body>
+</html>

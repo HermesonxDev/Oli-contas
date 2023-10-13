@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="'viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/desenvolvedor.css' %}">
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <title>Oli Contas - Modere suas finanças</title>
+    </head>
+
+    <body>
+        <header>
+            <nav id="menu-h">
+                <ul>
+                    <li><a href="{% url 'home' %}"><span class="bi bi-house-door-fill" aria-hidden="true"></span> Inicio</a></li>
+                    <li><a href="{% url 'nova_transacao' %}"><span class="bi bi-cash-coin" aria-hidden="True"></span> Novas transações</a></li>
+                    <li><a href="{% url 'transacoes' %}"><span class="bi bi-bank2" aria-hidden="True"></span> Transações</a></li>
+                    <li><a href="{% url 'desenvolvedor' %}"><span class="bi bi-braces"></span> Desenvolvedor</a></li>
+                    <li><a href="{% url 'suporte' %}"><span class="bi bi-person-workspace" aria-hidden="True"></span> Suporte</a></li>
+                    <li><a href="{% url 'sair' %}"><span class="bi bi-door-open" aria-hidden="True"></span> Sair</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="main">
+                <div class="header">
+                    <h1>Desenvolvedor de Software</h1>
+                    <img class="avatar" src="{% static 'img/avatar.png' %}" alt="avatar">
+                </div>
+        
+                <div class="about">
+                    <h2>Sobre mim</h2>
+                    <p>Meu nome é Hermeson tenho 19 anos, estou no caminho para me tornar um desenvolvedor de software, tenho formação técnica e estou cursando ensino superior na Unifor. Fiz esse sistema para mostrar meus conhecimentos atuais, caso ele tenha chegado até você, espero que faça bom proveito dele!</p>
+                </div>
+        
+                <div class="detalhes">
+                    <h2>Detalhes</h2>
+                    <br>
+                    <span class="negrito">Nome:</span><p>Francisco Hermeson Oliveira dos Santos</p>
+                    <span class="negrito">Idade:</span><p>19 Anos</p>
+                    <span class="negrito">Formação:</span><p>Técnico de Informática - EEEP Jaime Alencar de Oliveira<br>Técnologo em Análise e desenvolvimento de Sistemas - Unifor</p>
+                </div>
+        
+                <div class="footer">
+                    <img src="{% static 'img/instagram.png' %}" class="ico" alt="Meu instagram">
+                    <img src="{% static 'img/twitter.png' %}" class="ico" alt="Meu twitter">
+                    <img src="{% static 'img/facebook.png' %}" class="ico" alt="Meu facebook">
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

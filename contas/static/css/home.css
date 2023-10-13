@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap');
+
+/* Grid 960px */
+.linha{
+    width: 960px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 5px 0;
+}
+
+.coluna{
+    padding: 0 10px;
+    float: left;
+}
+
+.col1{
+    width: 60px;
+}
+
+.col2{
+    width: 140px;
+}
+
+.col3{
+    width: 220px;
+}
+
+.col4{
+    width: 300px;
+}
+
+.col5{
+    width: 380px;
+}
+
+.col6{
+    width: 460px;
+}
+
+.col7{
+    width: 540px;
+}
+
+.col8{
+    width: 620;
+}
+
+.col9{
+    width: 700px;
+}
+
+.col10{
+    width: 780px;
+}
+
+.col11{
+    width: 860px;
+}
+
+.col12{
+    width: 940px;
+}
+
+body{
+    background-color: #F0F8FF;
+}
+
+.quadrados{
+    background: #fff;
+}
